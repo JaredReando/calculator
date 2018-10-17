@@ -14,7 +14,18 @@ var divide = function(number1, number2) {
   return number1 / number2;
 }
 
-var number1 = parseInt(prompt("Enter a number: "));
-var number2 = parseInt(prompt("Enter another number: "));
+$(function() {
+  $('form#add').submit(function(event){
+    event.preventDefault();
+    var number1 = parseInt($('#add1').val());
+    var number2 = parseInt($('#add2').val());
+    $('.output').text(add(number1,number2));
+  });
 
-alert(add(number1, number2));
+  $('form#mult').submit(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($('#mult1').val());
+    var number2 = parseInt($('#mult2').val());
+    $('.output').text(multiply(number1,number2));
+  });
+});
